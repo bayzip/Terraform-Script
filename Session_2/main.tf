@@ -35,5 +35,5 @@ resource "alicloud_slb" "ali_slb" {
 
 resource "alicloud_slb_attachment" "attached_ali_slb" {
   instance_ids = ["module.Instance_ZoneA.this_instance_id","module.Instance_ZoneB.this_instance_id"]
-  load_balancer_id = "${alicloud_slb.ali_slb.id}"
+  load_balancer_id = alicloud_slb.ali_slb.id
 }
