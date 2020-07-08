@@ -1,2 +1,0 @@
-# Terraform-Script
-Terraform Script 
