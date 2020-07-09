@@ -5,6 +5,7 @@ module "Instance_ZoneA" {
   vpc_name              = var.vpc_name
   vpc_cidr              = var.vpc_cidr
   sg_name               = var.sg_name
+  vswitch_name          = var.vswitch_name
   vswitch_cidr          = var.vswitch_cidr
   image_id              = var.image_id
   ecs_instance_type     = var.ecs_instance_type
@@ -20,6 +21,7 @@ module "Instance_ZoneB" {
   vpc_name              = var.vpc_name
   vpc_cidr              = var.vpc_cidr
   sg_name               = var.sg_name
+  vswitch_name          = var.vswitch_name
   vswitch_cidr          = var.vswitch_cidr
   image_id              = var.image_id
   ecs_instance_type     = var.ecs_instance_type
@@ -31,6 +33,15 @@ module "Instance_ZoneB" {
 resource "alicloud_slb" "ali_slb" {
   name        = "slb_test"
   vswitch_id  = var.vswitch_cidr
+  internet = "true"
+}
+
+resource "alicloud_slb_listener" "http" {
+  load_balancer_id = alicloud_slb.ali_slb.id
+  frontend_port = 80
+  backend_port = 80
+  health_check_connect_port = 80
+  protocol = "http"
 }
 
 resource "alicloud_slb_attachment" "attached_ali_slb" {
