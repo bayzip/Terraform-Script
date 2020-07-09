@@ -10,6 +10,7 @@ resource "alicloud_security_group" "sg" {
 }
 
 resource "alicloud_vswitch" "vswitch" {
+  name = var.vswitch_name
   availability_zone = var.av_zone
   cidr_block = var.vswitch_cidr
   vpc_id = alicloud_vpc.ali_vpc.id

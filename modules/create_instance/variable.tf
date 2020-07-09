@@ -14,6 +14,11 @@ variable "sg_name" {
   type = string
 }
 
+variable "vswitch_name" {
+  description = "SG Name"
+  type = string
+}
+
 variable "vswitch_cidr" {
   description = "VSwitch CIDR"
   type = string

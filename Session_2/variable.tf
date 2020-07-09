@@ -17,6 +17,12 @@ variable "sg_name" {
   default = "tf_ali_sg"
 }
 
+variable "vswitch_name" {
+  description = "vswitch Name"
+  type = string
+  default = "tf_ali_vswitch"
+}
+
 variable "vswitch_cidr" {
   description = "VSwitch CIDR"
   type = string
