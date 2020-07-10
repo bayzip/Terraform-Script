@@ -33,7 +33,6 @@ module "Instance_ZoneB" {
 resource "alicloud_slb" "ali_slb" {
   name        = "slb_test"
   vswitch_id  = var.vswitch_cidr
-  internet = "true"
 }
 
 resource "alicloud_slb_listener" "http" {
