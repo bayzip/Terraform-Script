@@ -1,37 +1,11 @@
-##### Configuration Network #####
-variable "vpc_name" {
-  description = "VPC name"
-  type = string
-}
-
-variable "vpc_cidr" {
-  description = "VPC CIDR"
-  type = string
-}
-
-variable "sg_name" {
-  description = "SG Name"
-  type = string
-}
-
-variable "vswitch_name" {
-  description = "SG Name"
-  type = string
-}
-
-variable "vswitch_cidr" {
-  description = "VSwitch CIDR"
+#### Instance Configuration #####
+variable "image_id" {
+  description = "Images that use to create instance"
   type = string
 }
 
 variable "av_zone" {
   description = "availability zone"
-  type = string
-}
-
-#### Instance Configuration #####
-variable "image_id" {
-  description = "Images that use to create instance"
   type = string
 }
 
@@ -51,6 +25,16 @@ variable "instance_charge_type" {
 }
 
 variable "keypair_instance" {
+  description = "Instance type that use to create instance"
+  type = string
+}
+
+variable "ecs_sg_id" {
+  description = "Instance type that use to create instance"
+  type = list(string)
+}
+
+variable "vswitch_id" {
   description = "Instance type that use to create instance"
   type = string
 }

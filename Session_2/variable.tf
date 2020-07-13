@@ -1,32 +1,14 @@
 ##### Configuration Network #####
-variable "vpc_name" {
-  description = "VPC name"
+variable "av_zone_a" {
+  description = "AV Zone"
   type = string
-  default = "tf_ali_vpc"
+  default = "ap-southeast-5a"
 }
 
-variable "vpc_cidr" {
-  description = "VPC CIDR"
+variable "av_zone_b" {
+  description = "AV Zone"
   type = string
-  default = "192.168.0.0/16"
-}
-
-variable "sg_name" {
-  description = "SG Name"
-  type = string
-  default = "tf_ali_sg"
-}
-
-variable "vswitch_name" {
-  description = "vswitch Name"
-  type = string
-  default = "tf_ali_vswitch"
-}
-
-variable "vswitch_cidr" {
-  description = "VSwitch CIDR"
-  type = string
-  default = "192.168.0.0/24"
+  default = "ap-southeast-5b"
 }
 
 #### Instance Configuration #####
