@@ -34,7 +34,7 @@ resource "alicloud_vswitch" "zone_A" {
 }
 
 module "Instance_ZoneA" {
-  source = "../modules/create_instance"
+  source = "../../modules/alicloud/create_instance"
 
   av_zone               = var.av_zone_a
   image_id              = var.image_id
@@ -54,7 +54,7 @@ resource "alicloud_vswitch" "zone_B" {
 }
 
 module "Instance_ZoneB" {
-  source = "../modules/create_instance"
+  source = "..\/..\/modules\/create_instance"
 
   av_zone               = var.av_zone_b
   image_id              = var.image_id
